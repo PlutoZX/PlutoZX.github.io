@@ -196,10 +196,3 @@
 
 // 我们来简单分析一下，点击之后，触发了test()函数，test()中封装了对share()函数的调用，且传了一个对象作为参数，对象中result字段对应的是个匿名函数，紧接着share()函数调用，其中的实现是2s过后，result(true);模拟js异步实现异步回调结果，分享成功。同时share()函数中，因为通过scriptMessageHandler无法传递function，所以先把shareData对象中的result这个匿名function转成String，然后替换shareData对象的result属性为这个String，并回传给OC，OC这边对应JS对象的数据类型是NSDictionary，我们打印并得到了所有参数，同时，把result字段对应的js function String取出来。这里我们延迟4s回调，模拟Native分享的异步过程，在4s后，也就是js中显示success的2s过后，调用js的匿名function，并传递参数（分享结果）。调用一个js function的方法是 functionName(argument); ，这里由于这个js的function已经是一个String了，所以我们调用时，需要加上()，如 (functionString)(argument);因此，最终我们通过OC -> JS 的evaluateJavaScript:completionHandler:方法，成功完成了异步回调，并传递给js一个分享失败的结果。
 // 上面的描述看起来很复杂，其实就是先执行了JS的默认实现，后执行了OC的实现。上面的代码展示了如何解决scriptMessageHandler的两个问题，并且实现了一个 JS -> OC、OC -> JS 完整的交互流程。
-
-public class JsInteration {
-  @JavascriptInterface
-  public String back() {
-    return "hello world";
-  }
-}
