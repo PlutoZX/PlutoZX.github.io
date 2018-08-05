@@ -1,0 +1,22 @@
+{
+  "name": "zxio",
+  "version": "1.0.0",
+  "description": "You can use the [editor on GitHub](https://github.com/PlutoZX/PlutoZX.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PlutoZX/PlutoZX.github.io.git"
+  },
+  "author": "zhaoxuan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PlutoZX/PlutoZX.github.io/issues"
+  },
+  "homepage": "https://github.com/PlutoZX/PlutoZX.github.io#readme",
+  "dependencies": {
+    "vuepress": "^0.12.0"
+  }
+}

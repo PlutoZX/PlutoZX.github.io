@@ -1,102 +1,565 @@
-<html>
-
+<!doctype html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  
   <link rel="stylesheet" href="./css/reveal.css">
   <link rel="stylesheet" href="./css/theme/white.css">
   <link rel="stylesheet" href="./lib/css/zenburn.css">
+  <style>
+    .reveal h2 {
+    
+    }
+    .reveal h3 {
+      font-size: 40px;
+    }
+    .reveal h4 {
+      font-size: 30px;
+      text-transform: none;
+    }
+    .reveal h5 {
+      font-size: 20px;
+      text-transform: none;
+      text-align: left;
+    }
+    
+    .reveal .p1 {
+      font-size: 16px;
+      color: #333;
+      text-align: left;
+    }
+    .reveal .p2 {
+      font-size: 12px;
+      color: #333;
+      text-align: left;
+      margin: 3px 0;
+    }
+    .reveal section img {
+      border: none;
+    }
+    
+    section.part0 li {
+      font-size: 30px;
+    }
+    section.part6 img {
+      margin-right: 10px;
+    }
+    section.part7 li {
+      font-size: 16px;
+      color: #333;
+      text-align: left;
+      margin: 20px 0;
+    }
+  </style>
 </head>
-
 <body>
-  <div class="reveal">
-    <div class="slides">
-      <section>slide 1</section>
+<div class="reveal">
+  <div class="slides">
+    <section>
+      <h2>ETC前端业务与多端交互实践</h2>
+    </section>
+    
+    <section class="part0">
+      <h3>目录</h3>
+      <ul>
+        <li>一、业务背景及前景</li>
+        <li>二、业务诉求</li>
+        <li>三、业务结构</li>
+        <li>四、业务实现</li>
+        <li>五、前端页面与客户端交互原理解析</li>
+        <li>六、前端主要页面详解</li>
+        <li>七、项目总结</li>
+        <li>八、其它</li>
+      </ul>
+    </section>
+    
+    <section class="part1">
       <section>
-        <h2>Some Slide</h2>
-
-        <aside class="notes">
-          Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes
-          window (hit »S« on your keyboard).
-        </aside>
+        <h3>一、业务背景及前景</h3>
+      </section>
+      
+      <section>
+        <h4>1.什么是ETC</h4>
+        <p class="p1">ETC是不停车电子收费系统，ETC专用车道是给那些装了ETC车载器的车辆使用的，采用电子收费方式。通过安装在车辆挡风玻璃上的车载电子标签与在收费站 ETC
+          车道上的微波天线之间的微波专用短程通讯，利用计算机联网技术与银行进行后台结算处理，从而达到车辆通过路桥收费站不需停车而能交纳路桥费的目的。</p>
+      </section>
+      
+      <section>
+        <h4>2.什么是车牌付</h4>
+        <p class="p1">车牌付是为了方便车主交高速路费推出的，收费站自动识别你的车牌号码，然后从你绑定的账号里面自动扣除费用。在过高速公路收费站时，不需要排队也无需ETC。</p>
+      </section>
+      
+      <section>
+        <h4>3.日常痛点</h4>
+        <img data-src="https://storage.jd.com/fe-zx/images/problem.jpg">
+      </section>
+      
+      <section>
+        <h4>4.ETC发展建设情况</h4>
+        <img style="max-height: 500px" data-src="https://storage.jd.com/fe-zx/images/yjavhpr66h.jpeg">
+      </section>
+      
+      <section>
+        <h4>5.ETC用户发展情况</h4>
+        <img style="max-height: 500px" data-src="https://storage.jd.com/fe-zx/images/65exoz8dt4.jpeg">
+      </section>
+      
+      <section>
+        <h4>6.ETC社会效益</h4>
+        <img data-src="https://storage.jd.com/fe-zx/images/rtgqh6m8w5.jpeg">
+      </section>
+      
+      <section>
+        <h4>7.全网ETC通行概况</h4>
+        <img style="max-height: 500px" data-src="https://storage.jd.com/fe-zx/images/%E5%9B%BE%E7%89%871.png">
+      </section>
+    </section>
+    
+    <section class="part2">
+      <section>
+        <h3>二、业务诉求</h3>
+      </section>
+      
+      <section>
+        <h4>1.用户痛点</h4>
+        <img data-src="https://storage.jd.com/fe-zx/images/image2018410111733.png">
+      </section>
+      
+      <section>
+        <h4>2.支付做的价值</h4>
+        <p class="p1">借助京东金融客户端平台，面向全国触达高净值用户群体，突破地区局域限制，实现ETC场景的业务延伸及数据、用户运营。</p>
+        <p class="p1">申请流程搬到京东金融线上客户端，足不出户办理业务。</p>
+        <p class="p1">京东内部及外部合作场景联合推广：商城/4s店。</p>
+        <p class="p1">提供增值业务：企业金融（火车ETC）、新通路便利店、京东物流、开普勒</p>
+        <img style="max-height: 300px" data-src="https://storage.jd.com/fe-zx/images/worddave5fe4b8e3300edc8b2029d0849060ca9.png">
+      </section>
+    </section>
+    
+    <section class="part3">
+      <section>
+        <h3>三、业务结构</h3>
+      </section>
+      
+      <section>
+        <h4>1.业务流程</h4>
+        <p class="p1">目前主要业务有两个，ETC开通和车牌付开通。 </p>
+        <p class="p1">其中ETC开通，又分为在金融APP内的提交申请和钱包APP内的安装人员激活。</p>
+        <img style="max-height: 300px" data-src="https://storage.jd.com/fe-zx/images/worddav0be76.png">
+      </section>
+      
+      <section>
+        <h4>1.1.ETC用户提交申请流程</h4>
+        <img data-src="https://storage.jd.com/fe-zx/images/worddave45d9.png">
+      </section>
+      
+      <section>
+        <h4>1.2.ETC安装人员上门激活流程</h4>
+        <img data-src="https://storage.jd.com/fe-zx/images/1531643567497.jpg">
+      </section>
+      
+      <section>
+        <h4>1.3.车牌付申请流程</h4>
+        <img data-src="https://storage.jd.com/fe-zx/images/1531643821760.jpg">
+      </section>
+      
+      <section>
+        <h4>2.扣款流程</h4>
+        <p class="p1">扣款流程分为正常和异常流程；</p>
+        <p class="p1">扣款成功，则整个流程结束； </p>
+        <p class="p1">扣款失败，则启动垫资还款流程。</p>
+        <p class="p1">垫资还款流程主要分为三部分：</p>
+        <p class="p1">用户扣款失败，京东垫资；</p>
+        <p class="p1">京东生成一笔待支付单，引导用户支付，成功后资金流入齐鲁还款商户号；</p>
+        <p class="p1">京东垫资商户号扣除齐鲁还款商户号对应的资金，完成整个流程。</p>
+      </section>
+      
+      <section>
+        <h4>3.资金流程</h4>
+        <p class="p1">如果扣用户高速通行费成功，则流程结束； </p>
+        <p class="p1">如果扣用户高速通行费失败，则启动垫资还款模式。</p>
+        <p class="p1">系统检测到用户缴费失败，则自动从垫资商户付一笔钱给齐鲁的收单商户号；</p>
+        <p class="p1">同时用户的页面会生成一笔待缴费单，引导用户去支付，用户支付成功后，资金会进入齐鲁的还款商户号且是实时结算，同时系统发起一笔扣款，将齐鲁还款的商户号资金扣到京东的垫资商户号。</p>
+        <img style="max-height: 300px" data-src="https://storage.jd.com/fe-zx/images/1531644120560.jpg">
+      </section>
+    </section>
+    
+    <section class="part4">
+      <section>
+        <h3>四、技术实现</h3>
+      </section>
+      
+      <section>
+        <h4>1.合作团队</h4>
+        <p class="p1">整体项目涉及团队较多，故交互也较多。整体关联如下图</p>
+        <img style="max-height: 500px" data-src="https://storage.jd.com/fe-zx/images/1531644751335.jpg">
+      </section>
+      
+      <section>
+        <h4>2.前端技术架构</h4>
+        <p class="p1">前端使用vue + vue-cli + webpack 方式搭建项目</p>
+        <img style="max-height: 300px" data-src="https://storage.jd.com/fe-zx/images/1531645126732.jpg">
+      </section>
+    </section>
+    
+    <section class="part5">
+      <section>
+        <h3>五、前端页面与客户端交互原理解析</h3>
+      </section>
+      
+      <section>
+        <h4>1.Hybird技术基本原理</h4>
+        <p class="p1">ETC整个流程中，前端最重要的功能就是和APP的交互通信，虽然没有完全做成一个完整功能级别的Hybird APP应用，但是交互通信原理是一致的。</p>
+        <p class="p1">作为一种混合开发的模式，Hybrid
+          APP底层依赖于Native提供的容器Webview，上层使用Html&Css&JS做业务开发，底层透明化、上层多多样化，这种场景非常有利于前端介入，非常适合业务快速迭代</p>
+        <p class="p1">Native提供的是一宿主环境，Hybrid的交互就是Native调用前端页面的JS方法，或者前端页面通过JS调用Native提供的接口，两者交互的桥梁皆Webview。 </p>
+        <img style="max-height: 300px" data-src="https://storage.jd.com/fe-zx/images/294743-20151031114738779-2068756578.png">
+      </section>
+      
+      <section>
+        <h4>2.Android和FE的通信</h4>
+        <div>
+          <h5>2.1 Android To JS</h5>
+          <p class="p1">若调用的js方法没有返回值，则直接可以调用mWebView.loadUrl("javascript:do()"); 其中do是js中的方法；</p>
+          <p class="p1">若有返回值时我们可以调用mWebView.evaluateJavascript()方法；</p>
+          <p class="p1">当调用H5中带参数的方法时，势必要传入一个JSON字符串，当传入固定字符串时，用单引号括起来即可；</p>
+          <p class="p1">当传入变量名时，需要用到转义符；</p>
+        </div>
+        
+        <div>
+          <h5>2.2 JS To Android</h5>
+          <p class="p1">Android需要新建一个类，里面写提供给前端操作的方法，并规定别名。</p>
+          <p class="p1">在Android 4.2以上可以直接使用@JavascriptInterface注解来声明。</p>
+          <p class="p1">
+            public class JsInteration {
+            @JavascriptInterface
+            public String back() {
+            return "hello world";
+            }
+            }
+          </p>
+          <p class="p1">定义完这个方法后再调用mWebView.addJavascriptInterface()方法：</p>
+          <p class="p1">mWebView.addJavascriptInterface(new JsInteration(), "android");</p>
+          <p class="p1">在前端中怎么来调用呢？调用格式为 window.别名.android中的方法名。</p>
+          <p class="p1">当前端调用Android的方法时，Android 需要把规定的别名传给H5（切记一定不能错），而且Android 要在自己的方法里执行H5想要的操作。</p>
+          <p class="p1">给前端调用的方法一定要加@JavascriptInterface，不然前端调不到Android 的方法 </p>
+          <p class="p1">window.android.back();</p>
+        </div>
+      </section>
+      
+      <section>
+        <h4>3.iOS和FE的通信</h4>
+        <div>
+          <h5>3.1UIWebView和WKWebView的差异</h5>
+          <p class="p1">更多的支持HTML5的特性</p>
+          <p class="p1">高达60fps的滚动刷新率以及内置手势</p>
+          <p class="p1">与Safari相同的JavaScript引擎</p>
+          <p class="p1">将UIWebViewDelegate与UIWebView拆分成了14类与3个协议（官方文档说明）</p>
+          <p class="p1">可以获取加载进度：estimatedProgress（UIWebView需要调用私有Api）</p>
+        </div>
+      </section>
+      
+      <section>
+        <div>
+          <h5>3.2 UIWebView 中 OC To JS</h5>
+          <p class="p1">a、stringByEvaluatingJavaScriptFromString</p>
+          <p class="p1">可以将javascript嵌入页面中，通过这个方法我们可以在iOS中调用javascript函数。</p>
+          <p class="p1">- (NSString *) stringByEvaluatingJavaScriptFromString:(NSString *)jsFunc 。 </p>
+          <p class="p1">b、JavaScriptCore</p>
+          <p class="p1">因为JavaScriptCore提供了JS到OC的映射，可以替换各种js方法成oc方法，所以其动态性（配合runtime的不安全性）也就成为了JSPatch被Apple禁掉的最主要原因。</p>
+          <p class="p1">JSPatch用iOS内置的JavaScriptCore.framework作为JS引擎，但没有用它JSExport的特性进行JS-OC函 数互调，而是通过Objective-C Runtime，从JS传递要调用的类名函数名到Objective-C，再使用NSInvocation动态调用对应的OC方法。是一种热更新技术。</p>
+        </div>
+  
+        <div>
+          <h5>3.3 UIWebView 中 JS To OC</h5>
+          <p class="p1">a、Custom URL Scheme</p>
+          <p class="p1">跳转到自定义URL Scheme构成的链接，而Objective-C中捕获该链接，从中解析必要的参数，实现JS到OC的一次交互。 </p>
+          <p class="p1">b、JavaScriptCore</p>
+          <p class="p1">在页面加载完成时先获取js上下文。获取到之后，就可以进行强大的方法映射了，将js的function映射到OC的方法。</p>
+          <p class="p1">首先oc定义一个js方法别名，赋给一个oc中的block。</p>
+          <p class="p1">当前端调用该方法时，用oc映射方法替换js的实现，将接收到的参数转化为oc对象。</p>
+          <p class="p1">js可以传入参数及回调函数，当oc执行完了原生的逻辑之后调用该回调函数，实现对调用者的异步回调。</p>
+        </div>
+      </section>
+      
+      <section>
+        <div>
+          <h5>3.4 WKWebView 中 OC To JS</h5>
+          <p class="p1">WKWebView提供了一个类似JavaScriptCore的方法evaluateJavaScript</p>
+        </div>
+        
+        <div>
+          <h5>3.5 WKWebView 中 JS To OC</h5>
+          <p class="p1">a、Custom URL Scheme</p>
+          <p class="p1">b、scriptMessageHandler</p>
+          <p class="p1">这是Apple在WebKit里新增加的方法，位于WKUserContentController.h。</p>
+          <p class="p1">在OC中添加一个scriptMessageHandler，则会在all frames中添加一个js的function： window.webkit.messageHandlers.&lt;name&gt;.postMessage(&lt;messageBody&gt;)</p>
+          <p class="p1">那么当在OC中通过如下的方法添加了一个handler</p>
+          <p class="p1">[controller addScriptMessageHandler:self name:@"currentCookies"]; </p>
+          <p class="p1">这里self要遵循协 WKScriptMessageHandler </p>
+          <p class="p1">则当在js中调用下面的方法时</p>
+          <p class="p1">window.webkit.messageHandlers.currentCookies.postMessage(document.cookie);</p>
+          <p class="p1">在OC中将会收到WKScriptMessageHandler的回调</p>
+          <p class="p1">通过window.webkit.messageHandlers.&lt;name&gt;.postMessage(&lt;messageBody&gt;)传递的messageBody中不能包含js的function，如果包含了function，那么 OC端将不会收到回调。</p>
+          <p class="p1">该方法还是没有办法直接获取返回值。可以采用异步回调的方式，将返回值返回给js。</p>
+          <p class="p1">一般js的参数中包含function是为了异步回调，这里可以把js的function转换为字符串，再传递给OC。</p>
+        </div>
+      </section>
+      
+      <section>
+        <h4>4.项目中jsbridge的封装</h4>
+        <img style="max-height: 500px" data-src="https://storage.jd.com/fe-zx/images/WechatIMG75.jpeg">
       </section>
       <section>
-        <h2>This video will use up the remaining space on the slide</h2>
-        <video src="https://v.mifile.cn/b2c-mimall-media/ed921294fb62caf889d40502f5b38147.mp4"></video>
+        <img style="max-height: 300px" data-src="https://storage.jd.com/fe-zx/images/worddav1b5d.png">
+        <p class="p1">对于iOS，采用上文提到的Custom URL Scheme方案。</p>
+        <p class="p1">前端生成iframe设置url然后iOS截取该请求的方式传递参数主动通信。 </p>
+        <p class="p1">对于Android，系统可以直接向window对象写入全局方法，并且监听该方法调用，因此可以很简单的通过约定一个全局方法，将参数传入来主动通信。 </p>
+        <p class="p1">对于两端的主动调用JS，因为都能调到js的全局方法，所以通过约定一个统一的接收函数即可</p>
+      </section>
+    </section>
+    
+    <section class="part6">
+      <section><h3>六、前端主要页面详解</h3></section>
+      
+      <section>
+        <h4>1.1 ETC首页</h4>
+        <img style="height: 300px" src="https://storage.jd.com/fe-zx/images/1531708188381.jpg">
+        <img style="height: 300px" src="https://storage.jd.com/fe-zx/images/WechatIMG82.jpeg">
+        <img style="height: 300px" src="https://storage.jd.com/fe-zx/images/WechatIMG81.jpeg">
+        <img style="height: 300px" src="https://storage.jd.com/fe-zx/images/WechatIMG83.jpeg">
+        <h5>功能概述：</h5>
+        <p class="p2">这个页面是整个ETC流程的入口首页，共有三种状态。</p>
+        <p class="p2">当判断为全新没有开通过ETC的用户时展示立即申请状态，</p>
+        <p class="p2">当判断为正在申请中的状态展示车牌申请列表，</p>
+        <p class="p2">当判断为已使用的用户时显示缴费记录列表，</p>
+        <p class="p2">后两个状态都可以切换回新开通状态用来申请新的ETC。 </p>
+        <p class="p2">新申请状态：</p>
+        <p class="p2">发卡方列表，根据当前商户号是否有申请中的车牌，显示立即申请和继续申请。发卡方的排序是有后端决定的需要单独查询一次，如果有营销策略需要可以改变排序。 选择一个开卡方后，会弹出申请须知展示总的申请步骤，点击立即申请会校验用户基本的申请资格如实名情况及小白信用情况等，通过即会生成新的申请单号，开启后续申请流程。</p>
+        <p class="p2">车牌卡状态：</p>
+        <p class="p2">车牌卡列表显示各个申请的车牌所处的状态，每种状态对应不同的操作显示在车牌卡下方的按钮上。每个车牌卡是个单独的组件。</p>
+        <p class="p2">缴费历史状态：</p>
+        <p class="p2">缴费历史列表显示待缴费和已缴费的记录最多展示五条，点击可以链接到缴费详情，每条记录是单独的组件。 </p>
+      </section>
+      
+      <section>
+        <h4>1.2 etc申请详情页</h4>
+        <img style="height: 300px" src="https://storage.jd.com/fe-zx/images/WechatIMG84.jpeg" alt="">
+        <img style="height: 300px" src="https://storage.jd.com/fe-zx/images/WechatIMG94.jpeg" alt="">
+        <img style="height: 300px" src="https://storage.jd.com/fe-zx/images/WechatIMG85.jpeg">
+        <h5>功能概述：</h5>
+        <p class="p2">这个页面承载ETC申请过程中各个状态的展示，并充当后续功能的入口。</p>
+        <p class="p2" class="p2">上半部分显示申请详情的基本信息，下半部分显示申请进度。</p>
+        <p class="p2">步骤有几步根据商户号和版本号决定，每步有对应的提示文案和操作根据24种状态码决定。</p>
+        <p class="p2">底部的大按钮根据申请状态的不同会有不同展示，具有不同功能：</p>
+        <p class="p2">还有其它辅助功能，如联系客服、吐槽、常见问题等。</p>
+      </section>
+      
+      <section>
+        <h4>1.3etc确认地址页</h4>
+        <img style="height: 300px" src="https://storage.jd.com/fe-zx/images/WechatIMG86.jpeg" alt="">
+        <img style="height: 300px" src="https://storage.jd.com/fe-zx/images/worddav6400.png" alt="">
+        <h5>功能概述：</h5>
+        <p class="p2">上面两个页面分别是选择地址页和编辑地址页。地址是用来邮寄OBU设备和上门安装设备的。ETC的有些功能的开通与否与地域有关，也是通过选择的收货地址来判断用户信息的。</p>
+        <p class="p2">需要注意的就是地区选择器的使用，使用的是商城的四级地址数据，请求方式为用父级的地区id查询子级地区列表。</p>
+      </section>
+      
+      <section>
+        <h4>1.4etc缴费记录及缴费详情页</h4>
+        <img style="height: 300px" src="https://storage.jd.com/fe-zx/images/WechatIMG87.jpeg" alt="">
+        <img style="height: 300px" src="https://storage.jd.com/fe-zx/images/WechatIMG88.jpeg" alt="">
+        <h5>功能概述：</h5>
+        <p class="p2">缴费记录及缴费详情页的功能为用户提供缴费历史查看和调用金融app收银台缴纳高速通行费的。</p>
+        <p class="p2">这两个页面都用到了金融sdk原生收银台完成支付功能。</p>
+        <p class="p2">支付功能首先需要用订单号从收单服务端获取还款单号，商户订单号，商户号，pt_key，签名，再将这几个参数传给SDK收银台，这里我自己简单封装了一下。 </p>
       </section>
       <section>
-        <p class="fragment grow">grow</p>
-        <p class="fragment shrink">shrink</p>
-        <p class="fragment fade-out">fade-out</p>
-        <p class="fragment fade-up">fade-up (also down, left and right!)</p>
-        <p class="fragment current-visible">visible only once</p>
-        <p class="fragment highlight-current-blue">blue only once</p>
-        <p class="fragment highlight-red">highlight-red</p>
-        <p class="fragment highlight-green">highlight-green</p>
-        <p class="fragment highlight-blue">highlight-blue</p>
+        <img style="height: 300px" src="https://storage.jd.com/fe-zx/images/WechatIMG89.jpeg" alt="">
+        <img style="height: 300px" src="https://storage.jd.com/fe-zx/images/WechatIMG90.jpeg" alt="">
+      </section>
+      
+      <section>
+        <h4>1.5 etc缴纳设备费页</h4>
+        <img style="height: 300px" src="https://storage.jd.com/fe-zx/images/WechatIMG91.jpeg" alt="">
+        <h5>功能概述：</h5>
+        <p class="p2">该页面用来缴纳OBU设备安装费，处理有上面提到的调用收银台的功能外，还可以去实名重新修改上传资料。</p>
+      </section>
+      
+      <section>
+        <h4>1. 6etc发票页</h4>
+        <img style="height: 300px" src="https://storage.jd.com/fe-zx/images/WechatIMG92.jpeg" alt="">
+        <img style="height: 300px" src="https://storage.jd.com/fe-zx/images/WechatIMG93.jpeg" alt="">
+        <h5>功能概述：</h5>
+        <p class="p2">发票申请及发票详情页是给已完成ETC申请激活的车辆发送电子发票的。</p>
+        <p class="p2">注意状态点的判断和邮箱地址的选择（默认邮箱和填写邮箱）。</p>
+      </section>
+      
+      <section>
+        <h4>2.1激活首页</h4>
+        <img style="height: 300px" src="https://storage.jd.com/fe-zx/images/WechatIMG96.jpeg" alt="">
+        <img style="height: 300px" src="https://storage.jd.com/fe-zx/images/WechatIMG95.jpeg" alt="">
+        <h5>功能概述：</h5>
+        <p class="p2">该页面是安装人员扫码的主页面。当安装人员从钱包APP中扫描用户提供的激活二维码时，就会在钱包APP中打开该页面，在页面中会校验待安装用户的信息如车牌号和状态码等。</p>
+        <p class="p2">当用户的激活申请通过之后，也是这个页面进入激活流程。</p>
+      </section>
+      
+      <section>
+        <h4>2.2蓝牙连接页</h4>
+        <img style="height: 300px" src="https://storage.jd.com/fe-zx/images/WechatIMG97.jpeg" alt="">
+        <h5>功能概述：</h5>
+        <p class="p2">该页面是和钱包客户端sdk交互的起始页面，承载蓝牙连接设备最基础的操作。</p>
+        <p class="p2">当用户手机蓝牙已开启，点击按钮会出现设备列表，当搜索到对应OBU设备，会添加到列表里，点击对应设备名连接。</p>
+        <p class="p2">这里要注意由于OBU的原因，在已连接状态不能重复连接OBU设备不然会报错，所以每次进入该页面需要主动断开蓝牙连接。</p>
+        <p class="p2">交互方式分为两类，即移动端主动通知SDK和SDK主动回调移动端。 </p>
+        <p class="p2">因为与APP的交互都是异步的，所以移动端主动通知SDK时，没有阻塞的操作，统一使用等待回调的方式完成交互，因此，需要再页面中首先定义好所需的全部回调，在主动触发通知APP调用原生功能。</p>
+        <p class="p2">对于钱包APP来说这次ETC的激活回调统一为type=45，激活流程中的具体每一个操作，通过回调返回结果res的method区分。这样的好处是，钱包APP只区分通信是否属于ETC激活（type:45）,具体通信内容不关心直接透传给前端或SDK，前端和SDK通过判断method执行具体逻辑。 </p>
       </section>
       <section>
+        <p  class="p2">设置jsbridge回调举例：</p>
+        <img style="max-height: 400px" src="https://storage.jd.com/fe-zx/images/WechatIMG99.jpeg" alt="">
+        <p  class="p2">主动通知SDK举例：</p>
+        <img style="max-height: 150px" src="https://storage.jd.com/fe-zx/images/WechatIMG100.jpeg" alt="">
+      </section>
+      
+      <section>
+        <h4>2.3 上传视频页</h4>
+        <img style="height: 300px" src="https://storage.jd.com/fe-zx/images/WechatIMG98.jpeg" alt="">
+        <h5>功能概述：</h5>
+        <p class="p2">该页面是激活流程里较为复杂的页面和客户端SDK交互频繁。</p>
+        <p class="p2">页面具有上传车内、车外视频，上传照片，校验视频状态，轮询视频结果，提交审核等功能能。</p>
+      </section>
+      <section>
+        <p class="p2">拍摄及上传车内车外视频是SDK交互流程：</p>
+        <img style="max-height: 150px" src="https://storage.jd.com/fe-zx/images/WechatIMG101.jpeg" alt="">
+        <p class="p2">注意当视频上传成功时，前端并不能立即预览，需要视频云转码返回视频地址才可以，所以前端有个轮询视频转码结果的操作。由于转码不应影响用户继续提交激活申请，所以可能用户不等视频转码成功就进行下一步，也可能一进该页面，视频就在转码状态，所以在一进页面请求用户已上传资料时如果仍是转码中状态，那么一进页面就要开始轮询。</p>
+        <img style="max-height: 150px" src="https://storage.jd.com/fe-zx/images/WechatIMG102.jpeg" alt="">
+        <p class="p2">视频的播放预览采用的是弹窗加浏览器原生的的播放控件形式。</p>
+      </section>
+      <section>
+        <p class="p2">照片上传是纯前端和服务端的交互操作无SDK参与，采用了FormData + createObjectURL + vue-resuorce的形式来发送照片数据。同时使用了ImageCompressor来进行图片压缩。使用了promise处理返回结果。 </p>
+        <p class="p2">读取文件压缩图片示例</p>
+        <img style="max-height: 500px" src="https://storage.jd.com/fe-zx/images/WechatIMG103.jpeg" alt="">
+      </section>
+      
+      <section>
+        <h4>3.1车牌付首页</h4>
+        <img style="height: 300px" src="https://storage.jd.com/fe-zx/images/WechatIMG104.jpeg" alt="">
+        <img style="height: 300px" src="https://storage.jd.com/fe-zx/images/WechatIMG105.jpeg" alt="">
+        <img style="height: 300px" src="https://storage.jd.com/fe-zx/images/WechatIMG107.jpeg" alt="">
+        <h5>功能概述：</h5>
+        <p class="p2">该页面是车牌付的入口首页，类似于ETC首页此页面也有三种状态。</p>
+        <p class="p2">新用户：未开通过车牌付的用户展示宣传状态，点击申请办理可以进行后续申请步骤。</p>
+        <p class="p2">有申请中的车辆：展示申请列表，如果有申请失败的情况可以去实名修改不合格的上传材料。</p>
+        <p class="p2">已有通行记录：展示待缴费和已缴费列表。</p>
+        <p class="p2">对应的操作分别为立即办理，查看失败原因、添加车辆、去缴费等。</p>
+      </section>
+    </section>
+    
+    <section class="part7">
+      <section>
+        <h3>七、项目总结</h3>
+      </section>
+      <section>
+        <ul>
+          <li>该项目中技术栈并不复杂，难点在于业务逻辑繁复与多端交互频繁，协作联调较为费时，也暴露出多端联调效率不高的问题。</li>
+          <li>优化方向可以使用统一化API工具（如YApi）先协定好接口API，提高前后端并行开发效率，也便于测试的单元测试。</li>
+          <li>测试各机型的时候也不够全面，有用户反馈某些机型体验不太好。</li>
+          <li>前端和客户端通信响应时间还可以再优化。</li>
+          <li>UI设计稿出完之后，需要产品过目同意，不要前端开发完又改设计。</li>
+          <li>希望在今后的合作项目中可以和同事们更高效、更流畅的完成项目。</li>
+          <li>带给用户更好的用户体验，更切实的满足用户的多元化需求。</li>
+        </ul>
+      </section>
+    </section>
+    
+    <section>
+      <h3>谢谢</h3>
+    </section>
+    
+    
+    
+    <section>
+      <p class="fragment grow">grow</p>
+      <p class="fragment shrink">shrink</p>
+      <p class="fragment fade-out">fade-out</p>
+      <p class="fragment fade-up">fade-up (also down, left and right!)</p>
+      <p class="fragment current-visible">visible only once</p>
+      <p class="fragment highlight-current-blue">blue only once</p>
+      <p class="fragment highlight-red">highlight-red</p>
+      <p class="fragment highlight-green">highlight-green</p>
+      <p class="fragment highlight-blue">highlight-blue</p>
+    </section>
+    <section>
         <span class="fragment fade-in">
           lalala
           <span class="fragment fade-out">I'll fade in, then out</span>
         </span>
-      </section>
-      <section>
-        <p class="fragment" data-fragment-index="3">Appears last</p>
-        <p class="fragment" data-fragment-index="1">Appears first</p>
-        <p class="fragment" data-fragment-index="2">Appears second</p>
-      </section>
-      <section>
-        <section>slide 3</section>
-        <section>slide 4</section>
-      </section>
-      <section data-markdown>
+    </section>
+    <section>
+      <p class="fragment" data-fragment-index="3">Appears last</p>
+      <p class="fragment" data-fragment-index="1">Appears first</p>
+      <p class="fragment" data-fragment-index="2">Appears second</p>
+    </section>
+    <section>
+      <section>slide 3</section>
+      <section>slide 4</section>
+    </section>
+    <section data-markdown>
         <textarea data-template>
               ## Page title
           
               A paragraph with some text and a [link](http://hakim.se).
             </textarea>
-      </section>
-      <section data-background-color="#ff0000">
-        <h2>Color</h2>
-      </section>
-      <section data-background-video="https://v.mifile.cn/b2c-mimall-media/ed921294fb62caf889d40502f5b38147.mp4" data-background-video-loop
-        data-background-video-muted>
-        <h2>Video</h2>
-      </section>
-      <section data-transition="zoom">
-        <h2>This slide will override the presentation transition and zoom!</h2>
-      </section>
-
-      <section data-transition-speed="fast">
-        <h2>Choose from three transition speeds: default, fast or slow!</h2>
-      </section>
-      <section data-transition="slide">
-        The train goes on …
-      </section>
-      <section data-transition="slide">
-        and on …
-      </section>
-      <section data-transition="slide-in fade-out">
-        and stops.
-      </section>
-      <section data-transition="fade-in slide-out">
-        (Passengers entering and leaving)
-      </section>
-      <section data-transition="slide">
-        And it starts again.
-      </section>
-    </div>
-  </div>
-  <script src="./js/reveal.js"></script>
-  <script src="./plugin/highlight/highlight.js"></script>
-  <script>
-    Reveal.initialize({
-      // parallaxBackgroundImage: './img/Fantasy+Blue+Space-2880x1800.jpg',
-      // parallaxBackgroundSize: '2100px 900px',
-      // parallaxBackgroundHorizontal: 200,
-      // parallaxBackgroundVertical: 50,
+    </section>
+    <section data-background-color="#ff0000">
+      <h2>Color</h2>
+    </section>
+    <section data-background-video="https://v.mifile.cn/b2c-mimall-media/ed921294fb62caf889d40502f5b38147.mp4"
+             data-background-video-loop
+             data-background-video-muted>
+      <h2>Video</h2>
+    </section>
+    <section data-transition="zoom">
+      <h2>This slide will override the presentation transition and zoom!</h2>
+    </section>
     
-    });
-  </script>
-</body>
+    <section data-transition-speed="fast">
+      <h2>Choose from three transition speeds: default, fast or slow!</h2>
+    </section>
+    <section data-transition="slide">
+      The train goes on …
+    </section>
+    <section data-transition="slide">
+      and on …
+    </section>
+    <section data-transition="slide-in fade-out">
+      and stops.
+    </section>
+    <section data-transition="fade-in slide-out">
+      (Passengers entering and leaving)
+    </section>
+    <section data-transition="slide">
+      And it starts again.
+    </section>
+  </div>
+</div>
 
+
+<script src="./js/reveal.js"></script>
+<script src="./plugin/highlight/highlight.js"></script>
+<script>
+  Reveal.initialize({
+    // parallaxBackgroundImage: './img/Fantasy+Blue+Space-2880x1800.jpg',
+    // parallaxBackgroundSize: '2100px 900px',
+    // parallaxBackgroundHorizontal: 200,
+    // parallaxBackgroundVertical: 50,
+    // dependencies: [
+    //   { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+    // ]
+  });
+</script>
+</body>
 </html>
